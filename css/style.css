@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;400;900&display=swap');
-
+:root {
+    --pink: #ffc0cb;
+    --dark: #242121;
+    --light: #fcf7fa;
+    --red: #170018;
+}
 *{
     margin:0;
     padding:0;
@@ -11,7 +16,7 @@
         -webkit-appearance:none;
     font-family: 'Noto Sans JP', sans-serif;
     font-display:swap;
-    color: #fcf7fa;
+    color: var(--light);
     border:none;
     font-weight:400;
     box-sizing: border-box;
@@ -23,7 +28,7 @@ body{
     overflow-x:hidden!important;
     margin:0 auto;
     box-sizing: border-box; 
-    background-color:#242121;
+    background-color: var(--dark);
 }
 button{
     background-color:transparent;
@@ -38,11 +43,14 @@ button{
 h1{
     font-size:1.25em;
     font-weight:900;
-    color:#ffc0cb;
+    color:var(--pink);
     line-height:1;
     letter-spacing:0.5px;
 }
-p{
+h2{
+    line-height:1em;
+}
+h6, p{
     font-size:0.85em;
 }
 nav h1 span{
@@ -52,22 +60,97 @@ nav h1 span{
 .jp{
     display:none;
 }
+.d-flex{
+    display:flex!important;
+}
+.justify-content-between{
+    justify-content:space-between!important;
+}
+.align-items-center{
+    align-items:center!important;
+}
+.align-items-start{
+    align-items:flex-start!important;
+}
 nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
     padding:1em;
 }
 #site-logo{
-    width:74%;
+    width:78%;
 }
 #site-logo h6{
-    margin-top:1em;
+    margin-top:.5em;
+    font-size:.65em;
 }
 nav button{
     margin-top:-6px;
 }
 article {
-    width:100%;
+    width:calc(100% - 2em);
     padding:1em;
+    background: var(--red);
+    border-left:.25em solid var(--pink);
+    margin:3em auto 0 auto;
+    max-width:1280px;
+}
+article .listing-details{
+    position:relative; 
+    width:100%;
+}
+article .listing-details button{
+    position:absolute; 
+    font-size:0.75em;
+    background-color:var(--red);
+    right:0;
+    top:-4.15em;
+    padding:.05em;
+    width:6em;
+    opacity:.57;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+}
+article .listing-details button.active{
+    opacity:1;
+}
+article .listing-details button.btn-en{
+    margin-right:6em;
+}
+article .listing-details .en, article .listing-details .jp{
+    padding: 0 0 0 1em;
+}
+article .listing-details .en div, article .listing-details .jp div{
+    margin: 1em 0;
+}
+article .listing-details span{
+    font-size:0.7em;
+    color: var(--dark);
+    border-radius:15px;
+    padding:5px 15px;
+}
+article .listing-details .listing-category{
+    background-color:rgb(171, 243, 243);
+    margin-right:.25em;
+}
+article .listing-details .listing-status{
+    background-color:rgb(248, 255, 187);
+}
+article .listing-details .listing-status.updating{
+    background-color:rgb(255, 213, 213);
+}
+@media screen and (min-width:768px){
+    h1{
+        font-size:2em;
+    }
+    .justify-content-md-center{
+        justify-content:center !important;
+    }
+    nav h1 span{
+        font-size:0.65em;
+    }
+    nav button{
+        display:none;
+    }
+    nav #site-logo{
+        text-align:center;
+    }
 }
