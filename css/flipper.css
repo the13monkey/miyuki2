@@ -1,11 +1,15 @@
-#jp-wrapper, #en-wrapper{
+#cover, .flip-book{
     width:100%;
     height:calc(50vh - 85px);
     padding:1em;
-    overflow-y:scroll;
-    background-color: #170018; 
+    overflow-y:initial;
+    background-color: var(--dark); 
     display:flex;
     align-items:center;
+    box-shadow:var(--shadow);
+}
+.flip-book{
+    background-color:var(--red);
 }
 ::-webkit-scrollbar {
     width: 4px;
@@ -21,30 +25,13 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
 }
-#jp-wrapper{
+#cover{
     border-bottom:1px dashed #eee;
-}
-.pager {
-    position:fixed; 
-    bottom:0;
-    left:0;
-    width:100%;
-}
-.pager button{
-    width:50%;
-}
-.pager button:first-child{
-    justify-content:flex-start;
-    padding-left:1em;
-}
-.pager button:last-child{
-    justify-content:flex-end; 
-    padding-right:1em;
 }
 .item-info{
     padding: 0 1em; 
     width:100%; 
-    border-left:.25em solid #ffc0cb;
+    border-left:.25em solid var(--pink);
     margin-bottom:.5em;
 }
 .item-info img{
@@ -54,16 +41,111 @@
 .item-info p{
     line-height:30px;
 }
-.flipping{
-    animation-name: flip; 
-    animation-duration: 1s; 
-    animation-fill-mode: forwards;
+.flip-book *{
+    color:#eee;
 }
-@keyframes flip{
-    0%{
-        transform: rotateX(0deg);
+input[type="checkbox"]{
+    display:none;
+}
+@media screen and (min-width:768px){
+    body{
+        max-width:var(--maxWidth);
+        margin:0 auto;
     }
-    100%{
-        transform: rotateX(180deg);
+    #cover{
+        width:50%;
+        float:left;
+        border:none; 
+        border-right:1px dashed #eee;
+    }
+    .flip-book{
+        width:50%;
+        float:right;
+        position:relative; 
+        perspective: 1500px;
+    }
+    #cover, .flip-book{
+        height:calc(100vh - 190px);
+    }
+    .flip{
+        width:100%;
+        height:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        transform-origin:left;
+        transform-style:preserve-3d; 
+        transform:rotateY(0deg);
+        transition:1s; 
+    }
+    .flip p{
+        font-size:1.25em;
+    }
+    .front, .back{
+        position: absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        display:flex;
+        align-items:center;
+        box-sizing:border-box;
+        padding:1em 2em;
+    }
+    .front{
+        background-color:var(--red);
+    }
+    .front *{
+        color:#eee;
+    }
+    #p1 .front{
+        justify-content:center;
+    }
+    #p1 .front h2{
+        text-align:center;
+    }
+    .back{
+        z-index:99;
+        transform:rotateY(180deg);
+        backface-visibility:hidden;
+        background-color:var(--dark);
+    }
+    .back *{
+        color:var(--grey);
+    }
+    .next-btn, .back-btn{
+        position:absolute;
+        bottom:13px;
+        right:13px;
+        cursor:pointer; 
+        font-size:0.85em;
+        text-transform:lowercase; 
+    }
+    #p1{
+        z-index:3;
+    }
+    #p2{
+        z-index:2;
+    }
+    #p3{
+        z-index:1;
+    }
+    #c1:checked ~ .flip-book #p1{
+        transform:rotateY(-180deg);
+        z-index:1; 
+    }
+    #c2:checked ~ .flip-book #p2{
+        transform:rotateY(-180deg);
+        z-index:2; 
+    }
+    #c3:checked ~ .flip-book #p3{
+        transform:rotateY(-180deg);
+        z-index:3; 
+    }
+}
+@media screen and (min-width:1140px){
+    #cover, .flip-book{
+        padding-left:2em;
+        padding-right:2em;
     }
 }
