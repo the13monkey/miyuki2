@@ -9,60 +9,58 @@
 </head>
 <body>
     <header>
-        <nav class="d-flex align-items-start justify-content-between justify-content-md-center">
-            <div id="site-logo">
+        <nav class="d-flex align-items-center justify-content-between">
+            <a href="index.html" id="site-logo">
                 <h1>NakajimaMiyuki<span>.com</span></h1>
                 <h6>Unofficial English Translation of Works of the One & Only 中島みゆき</h6>
-            </div>
-            <button type="button">
+            </a>
+            <button id="mobile-menu" type="button">
                 <svg width="3em" height="3em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M3 8h18a1 1 0 0 0 0-2H3a1 1 0 0 0 0 2zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2z" fill="#ffc0cb"/></svg>
             </button>
         </nav>
+        <div class="navbar">
+            <a href="book.html">本/Book</a>
+            <a href="lyric.html">歌詞/Lyric</a>
+            <a href="yakai.html">夜会/Yakai</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </header>
 
-    <div class="item-info">
-        <img src="img/album_1.jpg" width="auto" height="30">
-        <p class="d-flex justify-content-between align-items-center">私の声が聞こえますか
-            <span class="d-flex align-items-center">
-                Table of Content
-                <svg width="30" height="30" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);margin-left:5px;" preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 1 0 112 0a56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0a56 56 0 1 0-112 0zm0 284a56 56 0 1 0 112 0a56 56 0 1 0-112 0z" fill="#fff"/></svg>
-            </span>
-        </p>
-    </div>
+    <h4 class="category-heading">本/Book</h4>
 
     <div class="book d-flex">
         <input type="checkbox" id="c1">
         <input type="checkbox" id="c2">
         <input type="checkbox" id="c3">
         <div id="cover">
-            <img src="img/album_1.jpg" width="100%" height="auto">
+            <img src="img/book1.png" width="100%" height="auto" style="background:#fff">
         </div>
         <div class="flip-book">
             <div class="flip" id="p1">
                 <div class="back">
-                    <h4>01 あぶな坂</h4>
+                    <img src="img/unrequited_love_2.jpg" width="100%" height="auto">
                     <label for="c1" class="back-btn">Back</label>
                 </div>
                 <div class="front">
                     <h2>
-                        私の声が聞こえますか<br><br>
-                        Can you hear my voice?
+                        四十行のひとりごと<br><br>
+                        Self-Talk in 40 Verses<br><br><br><br>
+                        <a href="#">Read &#8594;</a>
                     </h2>
                     <label for="c1" class="next-btn">Next</label>
                 </div>
             </div>
             <div class="flip" id="p2">
                 <div class="back">
-                    <p>
-                        あぶな坂を越えたところに<br>
-                        あたしは住んでいる<br>
-                        坂を越えてくる人たちは<br>
-                        みんな けがをしてくる
-                    </p>
+                    <img src="img/girl_song.jpg" width="100%" height="auto">
                     <label for="c2" class="back-btn">Back</label>
                 </div>
                 <div class="front">
-                    <h4>01 The Dangerous Hill</h4>
+                    <h2>
+                        片想い<br><br>
+                        Unrequited Love<br><br><br><br>
+                        <a href="#">Read &#8594;</a>
+                    </h2>
                     <label for="c2" class="next-btn">Next</label>
                 </div>
             </div>
@@ -74,22 +72,25 @@
                     <label for="c3" class="back-btn">Back</label>
                 </div>
                 <div class="front">
-                    <p>
-                        The place on the other side of the dangerous hill<br>
-                        Is where I live<br>
-                        Every man who climbed over the hill<br>
-                        Suffers some type of wounds
-                    </p>
+                    <h2>
+                        女歌<br><br>
+                        Women's Songs<br><br><br><br>
+                        <a href="#">Read &#8594;</a>
+                    </h2>
                     <label for="c3" class="next-btn">Next</label>
                 </div>
             </div>
         </div>
         
     </div>
+
     <footer>
+        <hr>
+        <h5>© NakajimaMiyuki.com 2021 / No copyright infringement intended</h5>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/flipper.css">
-        <script src="js/my-flipper.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="js/global.js"></script>
     </footer>
 </body>
 </html>
