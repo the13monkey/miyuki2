@@ -23,12 +23,11 @@
     border:none;
     font-weight:400;
     box-sizing: border-box;
-    line-height:1.5em;
+    line-height:1.15rem;
 }
 body{
     width:100vw;
-    height:100vh;
-    overflow:hidden!important;
+    overflow-x:hidden!important;
     margin:0 auto;
     box-sizing: border-box; 
     background-color: var(--dark);
@@ -40,25 +39,25 @@ button{
     display:flex; 
     align-items:center;
     justify-content:center;
-    width:3em;
-    height:3em;
+    width:3rem;
+    height:3rem;
     cursor:pointer; 
 }
 h1{
-    font-size:1.25em;
+    font-size:1.25rem;
     font-weight:900;
     color:var(--pink);
     line-height:1;
     letter-spacing:0.5px;
 }
 h2{
-    line-height:1em;
+    line-height:1rem;
 }
 h6{
-    font-size:.65em;
+    font-size:.65rem;
 }
 p{
-    font-size:0.85em;
+    font-size:0.85rem;
 }
 ::-webkit-scrollbar {
     width: 4px;
@@ -75,7 +74,7 @@ p{
     background: #b30000; 
 }
 nav h1 span{
-    font-size:0.85em;
+    font-size:0.85rem;
     font-weight:100;
 }
 .jp{
@@ -97,14 +96,14 @@ nav h1 span{
     align-items:flex-start!important;
 }
 nav{
-    padding:1em;
+    padding:1rem;
     max-width:var(--maxWidth);
 }
 #site-logo,.navbar{
     width:78%;
 }
 #site-logo h6{
-    margin-top:.5em;
+    margin-top:.5rem;
 }
 .navbar{
     height:100vh;
@@ -113,7 +112,7 @@ nav{
     top:0;
     display:flex;
     flex-direction: column;
-    padding:1.25em 1em;
+    padding:1.25rem 1rem;
     z-index:9;
     max-width:400px;
     box-shadow:var(--shadow);
@@ -122,10 +121,11 @@ nav{
 }
 .navbar a{
     letter-spacing:1px;
-    font-size:2em;
-    padding:.5em;
+    font-size:2rem;
+    padding:.5rem;
     opacity:.65;
     transition:.25s;
+    padding:0.5em 0;
 }
 .navbar a:hover{
     opacity:1;
@@ -137,10 +137,10 @@ footer hr{
     border:none; 
     width:20%;
     border-top:1px solid var(--pink);
-    margin:1em auto;
+    margin:1rem auto;
 }
 footer {
-    padding:1em;
+    padding:1rem;
     text-align:center;
     position:absolute; 
     bottom:0;
@@ -148,8 +148,12 @@ footer {
     width:100%;
 }
 .wrapper{
-    width:100%;
-    height:calc(100vh - 190px);
+    width:100vw; 
+    height:var(--app-height);
+    position:fixed;
+    z-index:-1;
+    top:0;
+    left:0;
 }
 .wrapper .category{
     text-decoration:none; 
@@ -157,7 +161,6 @@ footer {
     text-align:center;
     opacity:.65;
     font-weight:400;
-    font-size:1.5em;
     letter-spacing:1px;
     display:none;
     color:var(--grey);
@@ -173,10 +176,10 @@ footer {
 }
 .category-heading{
     color:var(--light)!important;
-    margin:0.5em 0 1em 1em;
+    margin:1rem auto;
     font-weight:300;
     border-left:5px solid var(--light);
-    padding-left:0.5em;
+    padding-left:0.5rem;
 }
 @keyframes slideIn{
     0%{
@@ -187,11 +190,11 @@ footer {
     }
 }
 article {
-    width:calc(100% - 2em);
-    padding:1em;
+    width:calc(100% - 2rem);
+    padding:1rem;
     background: var(--red);
-    border-left:.25em solid var(--pink);
-    margin:3em auto 0 auto;
+    border-left:.25rem solid var(--pink);
+    margin:3rem auto 0 auto;
     max-width: var(--maxWidth);
     box-shadow: var(--shadow);
 }
@@ -201,37 +204,37 @@ article .listing-details{
 }
 article .listing-details button{
     position:absolute; 
-    font-size:0.75em;
+    font-size:0.75rem;
     background-color:var(--red);
     right:0;
-    top:-4.15em;
-    padding:.05em;
-    width:6em;
+    top:-4.15rem;
+    padding:.05rem;
+    width:6rem;
     opacity:.57;
-    border-top-left-radius: 0.75em;
-    border-top-right-radius: 0.75em;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
 }
 article .listing-details button.active{
     opacity:1;
 }
 article .listing-details button.btn-en{
-    margin-right:6em;
+    margin-right:6rem;
 }
 article .listing-details .en, article .listing-details .jp{
-    padding: 0 0 0 1em;
+    padding: 0 0 0 1rem;
 }
 article .listing-details .en div, article .listing-details .jp div{
-    margin: 1em 0;
+    margin: 1rem 0;
 }
 article .listing-details span{
-    font-size:0.7em;
+    font-size:0.7rem;
     color: var(--dark);
     border-radius:15px;
     padding:5px 15px;
 }
 article .listing-details .listing-category{
     background-color:rgb(171, 243, 243);
-    margin-right:.25em;
+    margin-right:.25rem;
 }
 article .listing-details .listing-status{
     background-color:rgb(248, 255, 187);
@@ -240,18 +243,22 @@ article .listing-details .listing-status.updating{
     background-color:rgb(255, 213, 213);
 }
 @media screen and (min-width:768px){
+    body{
+        max-width:var(--maxWidth);
+        margin:0 auto;
+    }
     h1{
-        font-size:2.75em;
+        font-size:2.75rem;
     }
     nav{
         max-width:var(--maxWidth);
         margin:0 auto;
     }
     nav h1 span{
-        font-size:0.65em;
+        font-size:0.65rem;
     }
     nav #site-logo h6{
-        font-size:0.85em;
+        font-size:0.85rem;
     }
     nav button{
         display:none;
@@ -262,10 +269,26 @@ article .listing-details .listing-status.updating{
         margin:0 auto;
     }
     article{
-        margin-top:5em;
+        margin-top:5rem;
     }
     #site-logo{
-        padding-top:0.5em;
-        padding-bottom:0.5em;
+        padding-top:0.5rem;
+        padding-bottom:0.5rem;
+    }
+    .navbar{
+        position:relative;
+        width:100%;
+        max-width:100%;
+        left:0;
+        flex-direction:row;
+        justify-content:center;
+        height:auto;
+    }
+    .navbar a{
+        font-size:1rem;
+        margin:0 .5rem;
+    }
+    .navbar a.current{
+        color:var(--pink);
     }
 }

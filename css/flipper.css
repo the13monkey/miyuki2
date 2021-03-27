@@ -53,16 +53,14 @@ input[type="checkbox"]{
     display:flex;
     align-items:center;
     box-sizing:border-box;
-    padding:1em 2em;
+    padding:1em;
 }
 .front{
     background-color:var(--red);
+    justify-content:center;
 }
 .front *{
     color:#eee;
-}
-#p1 .front{
-    justify-content:center;
 }
 .back{
     z-index:99;
@@ -80,6 +78,12 @@ input[type="checkbox"]{
     cursor:pointer; 
     font-size:0.85em;
     text-transform:lowercase; 
+}
+.book img{
+    width:100%;
+    height:auto;
+    max-width:400px;
+    margin:0 auto;
 }
 #p1{
     z-index:3;
@@ -103,12 +107,11 @@ input[type="checkbox"]{
     z-index:3; 
 }
 @media screen and (min-width:768px){
-    body{
-        max-width:var(--maxWidth);
-        margin:0 auto;
-    }
     .flip h4, .flip p{
         font-size:1.2em;
+    }
+    .front h2, .flip h4, .flip p{
+        font-size:1rem;
     }
 }
 @media screen and (min-width:1140px){

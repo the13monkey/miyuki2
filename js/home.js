@@ -1,15 +1,19 @@
 $(document).ready( () => {
 
-    const flipCategory = () => {
+    const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    window.addEventListener('resize', appHeight)
+    appHeight()
 
-        let categories = $(".category")
-        let activeCategory = $(".category.active")
+    function flipCategory() {
+
+        let categories = $(".category");
+        let activeCategory = $(".category.active");
         if (activeCategory.is(":last-child")) {
-            categories.first().addClass("active")
+            categories.first().addClass("active");
         } else {
-            activeCategory.next().addClass("active")
+            activeCategory.next().addClass("active");
         }
-        activeCategory.removeClass("active")
+        activeCategory.removeClass("active");
     }
 
     let interval = setInterval(flipCategory, 2000)
