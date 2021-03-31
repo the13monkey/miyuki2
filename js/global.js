@@ -1,5 +1,8 @@
-$(document).ready(()=>{
-    $("#mobile-menu").click(()=>{
-        $(".navbar").toggleClass("slideInLeft");
-    });
-});
+$(document).ready( () => {
+
+    const appHeight = () => document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`)
+    window.addEventListener('resize', appHeight)
+    appHeight()
+
+    
+}) 
