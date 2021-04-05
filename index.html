@@ -3,20 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>English for Miyuki</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
-    <div class="full-wrapper">
-        <a href="#">
+    <section class="full-wrapper" id="link-home">
+        <div class="section_head">
             <h1>NakajimaMiyuki.com</h1>
-            <h6>Unofficial English Translation of Works of the One & Only 中島みゆき</h6>
-        </a>
-    </div>
-    
+            <h6>Unofficial English Translation of Works from the One & Only 中島みゆき</h6>
+        </div>
+        <div class="canvas"></div>
+    </section>
+    <nav>
+        <p id="home">
+            <a href="#link-home" class="jp nav-link pink">ホーム</a>
+            <a href="#link-home" class="en nav-link pink">Home</a>
+        </p>
+        <p id="books">
+            <a href="#link-books" class="jp nav-link">本</a>
+            <a href="#link-books" class="en nav-link">Book</a>
+        </p>
+        <p id="lyrics">
+            <a href="#link-lyrics" class="jp nav-link">歌詞</a>
+            <a href="#link-lyrics" class="en nav-link">Lyric</a>
+        </p>
+        <p id="yakais">
+            <a href="#link-yakais" class="jp nav-link">夜会</a>
+            <a href="#link-yakais" class="en nav-link">Yakai</a>
+        </p> 
+        <p id="contact">
+            <a href="#link-contact" class="jp nav-link">連絡</a>
+            <a href="#link-contact" class="en nav-link">Contact</a>
+        </p>
+    </nav>
+    <section class="full-wrapper" id="link-books">
+        <div class="section_head">
+            <h1>本/Books</h1>
+            <h6>Unofficial English Translation of Works from the One & Only 中島みゆき</h6>
+        </div>
+        <div class="canvas">
+            <div class="index active">
+                <article class="completed">
+                    <p>崖っぷちにカメ</p>
+                </article>
+                <article>
+                    <p>愛が好きです</p>
+                </article>
+                <article>
+                    <p>女歌</p>
+                </article>
+                <article>
+                    <p>片想い</p>
+                </article>
+                <article>
+                    <p>泣かないで・女歌</p>
+                </article>
+                <article>
+                    <p>この空を飛べたら</p>
+                </article>
+                <article>
+                    <p>もっぷでやんす</p>
+                </article>
+            </div>
+            <div class="content">
+                <button type="button">See Index</button>
+            </div>
+        </div>
+    </section>
+    <section class="full-wrapper" id="link-lyrics">
+        <div class="section_head">
+            <h1>歌詞/Lyric</h1>
+            <h6>Unofficial English Translation of Works from the One & Only 中島みゆき</h6>
+        </div>
+        <div class="canvas">
+            <div class="index active">
+                <article data-songid="1">
+                    <p>恩知らず</p>
+                </article>
+                <article data-songid="2">
+                    <p>麦の呗</p>
+                </article>
+                <article data-songid="3">
+                    <p>暦売りの歌</p>
+                </article>
+            </div>
+            <div class="content">
+                <div id="player-warpper">
+                    <div id="lyrics">
+                        <h4 id="song-title"></h4>
+                        <div id="lyrics-wrapper">
+                            <div id="lyrics-jp">
+                                <div id="lyrics-jp-content">
+                                    <p>Japanese Lyrics</p>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <p  class="current">Ipsa suscipit nemo accusamus voluptatum ipsum</p>
+                                    <p>quidem nobis aspernatur</p>
+                                    <p>facere veritatis architecto aperiam voluptate. Ex, placeat alias! Quis reiciendis a expedita soluta!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, a ipsum ipsa eos eum, officiis incidunt ducimus blanditiis corporis sunt voluptatibus repellat facilis? Explicabo nemo aspernatur libero neque, reprehenderit soluta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos aliquam similique eaque id nulla libero velit hic laudantium? Voluptates ab aspernatur atque voluptatibus rem veniam asperiores odit quae pariatur.</p>
+                                </div>
+                            </div>
+                            <div id="lyrics-en">
+                                <div id="lyrics-en-content">
+                                    <p>English Lyrics</p>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                    <p>Ipsa suscipit nemo accusamus voluptatum ipsum</p>
+                                    <p>quidem nobis aspernatur</p>
+                                    <p>facere veritatis architecto aperiam voluptate. Ex, placeat alias! Quis reiciendis a expedita soluta!Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, a ipsum ipsa eos eum, officiis incidunt ducimus blanditiis corporis sunt voluptatibus repellat facilis? Explicabo nemo aspernatur libero neque, reprehenderit soluta! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quos aliquam similique eaque id nulla libero velit hic laudantium? Voluptates ab aspernatur atque voluptatibus rem veniam asperiores odit quae pariatur.</p>
+                                </div>
+                            </div>
+                        </div><!-- #lyrics-wrapper -->
+                    </div><!-- #lyrics -->
+                    <audio id="audioFile" preload="true"></audio>
+                    <div id="player">
+                        <div id="bar">
+                            <div id="currentTime">0:00</div>
+                            <div id="progress-bar">
+                                <div id="progress">
+                                    <button type="button" id="progressButton"></button>
+                                </div>
+                            </div>
+                            <div id="totalTime">1:15</div>
+                        </div><!-- #bar -->
+                        <div id="menu">
+                            <button id="repeat" type="button">
+                                <svg width="1.5rem" height="1.5rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#cecece" d="M20.3 13.43a1 1 0 0 0-1.25.65A7.14 7.14 0 0 1 12.18 19A7.1 7.1 0 0 1 5 12a7.1 7.1 0 0 1 7.18-7a7.26 7.26 0 0 1 4.65 1.67l-2.17-.36a1 1 0 0 0-1.15.83a1 1 0 0 0 .83 1.15l4.24.7h.17a1 1 0 0 0 .34-.06a.33.33 0 0 0 .1-.06a.78.78 0 0 0 .2-.11l.09-.11c0-.05.09-.09.13-.15s0-.1.05-.14a1.34 1.34 0 0 0 .07-.18l.75-4a1 1 0 0 0-2-.38l-.27 1.45A9.21 9.21 0 0 0 12.18 3A9.1 9.1 0 0 0 3 12a9.1 9.1 0 0 0 9.18 9A9.12 9.12 0 0 0 21 14.68a1 1 0 0 0-.7-1.25z"/></svg>
+                            </button>
+                            <button id="prev">
+                                <svg width="1.5rem" height="1.5rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><g fill="none"><path d="M2.75 16.25a.75.75 0 0 0 1.5 0V3.75a.75.75 0 0 0-1.5 0v12.5z" fill="#cecece"/><path d="M16.75 15.599a1.25 1.25 0 0 1-1.943 1.04L6.409 11.04a1.25 1.25 0 0 1 0-2.08l8.398-5.599a1.25 1.25 0 0 1 1.943 1.04V15.6z" fill="#cecece"/></g></svg>
+                            </button>
+                            <button id="play">
+                                <span id="loading-icon">loading...</span>
+                                <svg id="play-icon" style="display:none" width="2rem" height="2rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="#cecece"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/></g></svg>
+                                <svg id="pause-icon" style="display:none" width="2rem" height="2rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M14 10h-2v12h2V10z" fill="#cecece"/><path d="M20 10h-2v12h2V10z" fill="#cecece"/><path d="M16 4A12 12 0 1 1 4 16A12 12 0 0 1 16 4m0-2a14 14 0 1 0 14 14A14 14 0 0 0 16 2z" fill="#cecece"/></svg>
+                            </button>
+                            <button id="next">
+                                <svg width="1.5rem" height="1.5rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><g fill="none"><path d="M17 3.75a.75.75 0 0 0-1.5 0v12.5a.75.75 0 0 0 1.5 0V3.75z" fill="#cecece"/><path d="M3 4.401a1.25 1.25 0 0 1 1.943-1.04l8.398 5.599a1.25 1.25 0 0 1 0 2.08L4.943 16.64A1.25 1.25 0 0 1 3 15.599V4.4z" fill="#cecece"/></g></svg>
+                            </button>
+                            <button id="shuffle">
+                                <svg width="1.5rem" height="1.5rem" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#cecece" d="M18.71 14.29a1 1 0 0 0-1.42 1.42l.29.29H16a4 4 0 0 1 0-8h1.59l-.3.29a1 1 0 0 0 0 1.42A1 1 0 0 0 18 10a1 1 0 0 0 .71-.29l2-2A1 1 0 0 0 21 7a1 1 0 0 0-.29-.71l-2-2a1 1 0 0 0-1.42 1.42l.29.29H16a6 6 0 0 0-5 2.69A6 6 0 0 0 6 6H4a1 1 0 0 0 0 2h2a4 4 0 0 1 0 8H4a1 1 0 0 0 0 2h2a6 6 0 0 0 5-2.69A6 6 0 0 0 16 18h1.59l-.3.29a1 1 0 0 0 0 1.42A1 1 0 0 0 18 20a1 1 0 0 0 .71-.29l2-2A1 1 0 0 0 21 17a1 1 0 0 0-.29-.71z"/></svg>
+                            </button>
+                        </div><!-- #menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="full-wrapper" id="link-yakais">
+        <div class="section_head">
+            <h1>夜会/Yakai</h1>
+            <h6>Unofficial English Translation of Works from the One & Only 中島みゆき</h6>
+        </div>
+        <div class="canvas"></div>
+    </section>
+    <section class="full-wrapper" id="link-contact">
+        <div class="section_head">
+            <h1>連絡/Contact</h1>
+            <h6>Unofficial English Translation of Works from the One & Only 中島みゆき</h6>
+        </div>
+        <div class="canvas"></div>
+    </section>
     <footer>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="js/global.js"></script>

@@ -2,7 +2,7 @@
 :root {
     --pink: #ffc0cb;
     --dark: #040d21;
-    --light: #fcf7fa;
+    --light: #cecece;
     --red: #0c162d;
     --grey: #8193b2;
     --maxWidth: 1140px;
@@ -18,35 +18,226 @@
         -moz-appearance:none;
         -webkit-appearance:none;
     font-family: 'Noto Sans JP', sans-serif;
-    font-display:swap;
     color: var(--grey);
     border:none;
     box-sizing: border-box;
 }
 body{
     width:100%;
-    overflow-x:hidden!important;
+    height:100%;
+    overflow:hidden!important;
     margin:0 auto;
     background-color: var(--dark);
 }
 h1{
     font-family: 'Arizonia', cursive;
-    font-size:1.5rem;
+    font-size:1.55rem;
     color: var(--pink);
-    line-height:3rem;
+    line-height:1;
     text-align:center;
     letter-spacing:1px;
+    padding:1rem 0 0.5rem 0;
 }
 h6{
-    width:65%;
+    width:60%;
     margin:0 auto;
     text-align:center;
     font-weight:400;
+    max-width:500px;
+}
+.pink{
+    color:var(--pink)!important;
 }
 .full-wrapper{
     width:100%;
     height:var(--app-height);
     overflow:hidden;
     position:relative; 
-    z-index:-1;
+}
+.canvas{
+    position:absolute; 
+    width:100%;
+    height:90%;
+    top:0;
+    left:0;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+nav{
+    position:fixed; 
+    width:100%;
+    height:10%; 
+    left:0;
+    bottom:0;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    padding:0;
+    border-top: 1vh solid var(--pink);
+    background-color: var(--dark);
+    z-index:9;
+}
+nav p{
+    width:80px;
+    text-align:center;
+}
+nav .nav-link{
+    display:none;
+    text-align:center;
+    font-size:0.85rem;
+}
+nav .nav-link.jp{
+    display:block
+}
+.section_head{
+    z-index:3;
+    width:100%;
+    position:absolute; 
+    background-color:var(--dark);
+}
+.canvas > div{
+    position: absolute; 
+    width:100%;
+    transform: translateX(100%);
+    top:var(--canvas-offset);
+    transition: all .5s linear;
+}
+.canvas > div.active{
+    transform: translateX(0);
+    z-index: 1;
+}
+.index {
+    padding: 1rem; 
+    display:grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 1rem; 
+}
+article{
+    position:relative; 
+    width:100%;
+    padding-top:100%; 
+    background-color:var(--red);
+    box-shadow: var(--shadow);
+    cursor:pointer; 
+}
+article p{
+    font-size:0.85rem;
+}
+#player-wrapper {
+    width:calc(100% - 2rem);
+    min-height: calc(90vh - var(--canvas-offset) - 2rem); 
+    box-shadow: var(--shadow);
+    margin:1rem;
+    position:relative; 
+}
+#song-title{
+    padding:0.5rem;
+    text-align:center;
+    color:var(--light);
+    font-weight:400;
+    background-color:#000;
+    margin-top:0.5rem;
+    font-size: 0.85rem; 
+}
+#player{
+    width:calc(100% - 2rem);
+    margin:0 1rem; 
+}
+#bar{
+    width:100%;
+    height:5px;
+    display:flex;
+    justify-content:space-between; 
+    align-items:center;
+}
+#currentTime, #totalTime{
+    font-size:10px;
+    line-height: 10px;
+    margin:0px;
+    padding:0px;
+}
+#progress-bar{
+    width:80%;
+    height:5px;
+    position:relative; 
+    background-color:var(--red);
+    box-shadow: var(--shadow);
+    border-radius:2px;
+    margin-top:2px;
+}
+#progress{
+    position:relative; 
+    width:100%;
+    height:100%;
+    background-color:#000;
+}
+#progressButton{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background-color:var(--grey);
+    box-shadow:var(--shadow);
+    position:absolute; 
+    top:-2.5px;
+    left:0px;
+}
+#menu{
+    width:100%;
+    display:flex;
+    justify-content:space-between; 
+    align-items:center; 
+    margin-top:1rem;
+}
+#menu button{
+    cursor:pointer; 
+    background:transparent; 
+    opacity: 0.5;
+}
+#menu button#play{
+    opacity: 1; 
+}
+#lyrics-wrapper{
+    width:100%;
+    height: calc(0.8 * var(--app-height) - 2.5rem - 120px);
+    margin-bottom:1rem; 
+    display:grid; 
+    grid-template-rows: 1fr 1fr; 
+    grid-template-columns: 1fr;
+}
+#lyrics-wrapper > div{
+    display:flex; 
+    justify-content:center;
+    align-items:center; 
+    flex-direction:column;
+    overflow: hidden; 
+    padding: 1rem; 
+    text-align: center;
+}
+#lyrics-wrapper #lyrics-jp{
+    border-bottom:1px dashed var(--grey);
+}
+#lyrics-wrapper p {
+    font-size: 0.8rem; 
+    line-height: 2; 
+}
+#lyrics-wrapper p.current{
+    font-size: 1rem; 
+    font-weight: bold; 
+    color:var(--light);
+}
+#lyrics-jp-content, #lyrics-en-content{
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+}
+@media screen and (min-width:500px){
+    h1{
+        font-size:2.5rem;
+    }
+}
+@media screen and (min-width:768px){
+    .index{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }

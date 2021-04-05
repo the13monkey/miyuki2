@@ -1,0 +1,25 @@
+{
+    "songs":[
+        {
+            "ID": 1,
+            "title": "恩知らず / Ingratitude",
+            "jp": "ingratitude-jp.json",
+            "en": "ingratitude-en.json",
+            "audio": "src/lyric/audio/ingratitude.mp3"
+        },
+        {
+            "ID" : 2,
+            "title": "麦の呗 / Wheat Song",
+            "jp": "wheat-song-jp.json",
+            "en": "wheat-song-en.json",
+            "audio": "src/lyric/audio/wheat-song.mp3"
+        },
+        {
+            "ID" : 3,
+            "title": "暦売りの歌 / Song of Calendar Sales",
+            "jp": "song-of-calendar-sales.json",
+            "en": "song-of-calendar-sales.json",
+            "audio": "src/lyric/audio/song-of-calendar-sales.mp3"
+        }
+    ]
+}
